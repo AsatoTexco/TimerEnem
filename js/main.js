@@ -53,7 +53,7 @@ var tempo = 0
 var sec = 0
 const timer = setInterval(function(){
     
-    tempo = tempo + 0.11
+    tempo = tempo + 0.01
 
     let unidade = ''
 
