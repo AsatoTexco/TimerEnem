@@ -69,12 +69,12 @@ var min_rapida = (Math.min.apply(null, dados) /60) + ""
  console.log((Math.min.apply(null, dados) % 60))
 var sec_rapida = (Math.min.apply(null, dados) % 60) < 10 ? "0"+(Math.min.apply(null, dados) % 60).toFixed(0): (Math.min.apply(null, dados) % 60).toFixed(0) 
 
-mais_rapida.innerText  =  questoes[dados.indexOf(Math.min.apply(null, dados))] + " - " +min_rapida[0]+":"+sec_rapida +" min"
+mais_rapida.innerText  =  questoes[dados.indexOf(Math.min.apply(null, dados))] + "° - " +min_rapida[0]+":"+sec_rapida +" min"
 
 var min_lenta = (Math.max.apply(null, dados) / 60) + "" 
 var sec_lenta = (Math.max.apply(null, dados) % 60) < 10 ? "0"+(Math.max.apply(null, dados) % 60).toFixed(0): (Math.max.apply(null, dados) % 60).toFixed(0) 
 
-mais_lenta.innerText  =  questoes[dados.indexOf(Math.max.apply(null, dados))] + " - " + min_lenta[0] +":"+ sec_lenta+ " min"
+mais_lenta.innerText  =  questoes[dados.indexOf(Math.max.apply(null, dados))] + "° - " + min_lenta[0] +":"+ sec_lenta+ " min"
 btn_nova_prova.addEventListener('click',new_test)
 
 function new_test(){
