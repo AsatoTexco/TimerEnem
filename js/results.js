@@ -1,3 +1,7 @@
+const btn_nova_prova = document.getElementById("nova_prova")
+btn_nova_prova.addEventListener('click',new_test)
+
+
 const response = localStorage.getItem('dados')
 
 const dados = response.split(',')  
@@ -42,7 +46,7 @@ if(dados[0] == ""){
     const tempo_total_html = document.getElementById("tempo_total")
     const mais_rapida = document.getElementById("mais_rapida")
     const mais_lenta = document.getElementById("mais_lenta") 
-    const btn_nova_prova = document.getElementById("nova_prova")
+    
     
       
     if((questoes[questoes.length - 1] - 1) >= 4){ 
@@ -106,14 +110,15 @@ if(dados[0] == ""){
     var sec_lenta = (Math.max.apply(null, dados) % 60) < 10 ? "0"+(Math.max.apply(null, dados) % 60).toFixed(0): (Math.max.apply(null, dados) % 60).toFixed(0) 
     
     mais_lenta.innerText  =  questoes[dados.indexOf(Math.max.apply(null, dados))] + "° - " + min_lenta[0] +":"+ sec_lenta+ " min"
-    btn_nova_prova.addEventListener('click',new_test)
     
-    function new_test(){
     
-        localStorage.removeItem("dados")
-        location.href = "../"
+}
+
+function new_test(){
     
-    }
+    localStorage.removeItem("dados")
+    location.href = "../"
+
 }
 
 
