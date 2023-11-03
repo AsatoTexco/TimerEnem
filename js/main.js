@@ -1,33 +1,21 @@
-
 const textTimer = document.getElementById("text_timer")
 const area_click = document.getElementById('area_click')
 const btn_voltar = document.getElementById("btn_voltar")
 var tempos = []
-
-
+ 
 btn_voltar.addEventListener('click',toResults)
-area_click.addEventListener('click',countQuestion)
+area_click.addEventListener('click',countQuestion) 
 
-
-
-function toResults(){
-
-     
-    
+function toResults(){  
     localStorage.setItem("dados",tempos)
     location.href = "./pages/results.html"
-}
+} 
 
-
-
-async function countQuestion(){
-
+async function countQuestion(){ 
     
     tempos.push(tempo)
     tempo = 0
-    sec = 0
-    console.log(tempos)
-
+    sec = 0   
 
     const Toast = Swal.mixin({
         toast: true,
@@ -45,19 +33,14 @@ async function countQuestion(){
         icon: 'success',
         title: 'Pergunta Registrada!'
       })
-}
-
-
+} 
 // ==========  TIMER  ============
 var tempo = 0
 var sec = 0
 const timer = setInterval(function(){
     
-    tempo = tempo + 0.01
-
-    let unidade = ''
-
-    
+    tempo = tempo + 0.01 
+    let unidade = '' 
     if(tempo > 60){ 
 
         let min = adjustTime(tempo / 60) + ""   
@@ -72,9 +55,7 @@ const timer = setInterval(function(){
  
 }, 10)
 // ================================
-
-
-
+ 
 function adjustTime(time){ 
   if(time < 10){
       time = time + ""
