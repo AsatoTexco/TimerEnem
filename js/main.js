@@ -61,16 +61,29 @@ const timer = setInterval(function(){
     if(tempo > 60){ 
 
         let min = tempo / 60 + ""   
-        tempoStr = min[0] + ":" + (tempo % 60).toFixed(0)
+        tempoStr = min[0] + ":" + adjustTime(tempo % 60) 
         unidade = ''
 
     }else{
         tempoStr = tempo.toFixed(2)
         unidade = 's'
     } 
-    textTimer.innerText = tempoStr + unidade
-    console.log(tempo % 60)
+    textTimer.innerText = tempoStr + unidade 
  
 }, 10)
 // ================================
 
+
+
+function adjustTime(time){ 
+  if(time < 10){
+      time = time + ""
+      time = "0"+time[0]
+  }
+  else{
+      time = time + ""
+      time = time[0] + time[1] + ""
+      
+  }
+  return time
+}
