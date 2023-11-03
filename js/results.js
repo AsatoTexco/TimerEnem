@@ -86,8 +86,7 @@ if(dados[0] == ""){
     }else{
         tempo_total_html.classList.add('green')
     }
-    
-    console.log( tempo_total > questoes[questoes.length-1] * 180 )
+     
 
     total_questoes.innerText = questoes[questoes.length - 1]
     
@@ -95,9 +94,12 @@ if(dados[0] == ""){
     var sec_media = (tempo_total / questoes[questoes.length - 1] % 60) < 10 ? "0"+(tempo_total / questoes[questoes.length - 1] % 60).toFixed(0): (tempo_total / questoes[questoes.length - 1] % 60).toFixed(0) 
     tempo_medio.innerText = min_media[0] +":"+ sec_media +' min'
     
-    var min_total =  tempo_total / 60  >= 1 ? adjustTime(tempo_total / 60 ) : "0"
-    // var sec_total = 
-    tempo_total_html.innerText = min_total +":"+ adjustTime(tempo_total % 60)
+
+    var hr_total =  tempo_total / 60 / 60 >= 1 ? adjustTime(tempo_total / 60 / 60) : "0"  
+    
+    var min_total =   tempo_total / 60 / 60 >= 1 ? (tempo_total / 60  >= 1 ? adjustTime(tempo_total / 60 % 60 ) : "0") : (tempo_total / 60  >= 1 ? adjustTime(tempo_total / 60 ) : "0")
+    console.log(tempo_total)
+    tempo_total_html.innerText = ((tempo_total / 60 / 60 >= 1 )? (hr_total + ":") : "") +min_total +":"+ adjustTime(tempo_total % 60)
     
 
 
